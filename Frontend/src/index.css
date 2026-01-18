@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* College Website Color Scheme */
+:root {
+  /* Primary - Deep Navy Blue (35%) */
+  --color-primary: #0B1C2D;
+  --color-primary-light: #132840;
+  --color-primary-dark: #060E17;
+  
+  /* Background (45%) */
+  --color-background: #F8F6F2;
+  --color-background-alt: #EDE9E3;
+  
+  /* Accent - Metallic Gold (5%) */
+  --color-accent: #C7A14A;
+  --color-accent-light: #D4B86A;
+  --color-accent-dark: #A88835;
+  
+  /* Text/Border/Card (15%) */
+  --color-text: #6B7280;
+  --color-text-light: #9CA3AF;
+  --color-text-dark: #4B5563;
+  --color-border: #6B7280;
+  
+  /* Utility colors */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+}
+
+/* Base styles */
+body {
+  font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text-dark);
+}
+
+/* Google Font import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
