@@ -16,7 +16,7 @@ function Header() {
         { label: "Staff", ariaLabel: "College staff information", href: '/staff' },
         { label: "Courses", ariaLabel: "Courses offered by college", href: '/courses' },
         { label: "Events", ariaLabel: "College events and activities", href: '/events' },
-        { label: "Placement Cell", ariaLabel: "Placement cell information" }
+        { label: "Placement Cell", ariaLabel: "Placement cell information", href: '/placement-cell' }
       ]
     },
     {
