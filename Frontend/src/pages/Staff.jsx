@@ -12,6 +12,7 @@ import principle from '../assets/staffPics/principle.png';
 import civil1 from '../assets/staffPics/civil1.png';
 import civil2 from '../assets/staffPics/civil2.png';
 import civil3 from '../assets/staffPics/civil3.png';
+import mukesh from '../assets/staffPics/mukesh.png'
 // IT
 import it from '../assets/staffPics/it.png';
 import it1 from '../assets/staffPics/it1.png';
@@ -24,6 +25,9 @@ import it8 from '../assets/staffPics/it8.png';
 import it9 from '../assets/staffPics/it9.png';
 import it10 from '../assets/staffPics/it10.png';
 import abhiSir from '../assets/staffPics/abhisekhsir.png'
+import priyanka from '../assets/staffPics/priyanka.png'
+import geeta from '../assets/staffPics/gita.png'
+import madhu from '../assets/staffPics/madhu.png'
 // Electronics
 import electronics from '../assets/staffPics/electronics.png';
 import electronics1 from '../assets/staffPics/electronics1.png';
@@ -47,6 +51,7 @@ import science1 from '../assets/staffPics/Faculties_of_Sciences_and_Others1.png'
 import science2 from '../assets/staffPics/Faculties_of_Sciences_and_Others2.png';
 import science3 from '../assets/staffPics/Faculties_of_Sciences_and_Others3.png';
 import science4 from '../assets/staffPics/Faculties_of_Sciences_and_Others4.png';
+import yogendra from '../assets/staffPics/yogendra.png';
 // Workshop Staff
 import workshop from '../assets/staffPics/Workshop_Staff.png';
 import workshop1 from '../assets/staffPics/Workshop_Staff1.png';
@@ -119,11 +124,11 @@ const Staff = () => {
                 { name: "Mr. Abhishek Chandra", designation: "Lecturer CHN", department: "Information Technology", image: abhiSir },
                 { name: "Mr. Amit Patel", designation: "Lecturer Computer", department: "Information Technology", image: it3 },
                 { name: "Mrs. Akanksha Singh", designation: "Lecturer Web Designing", department: "Information Technology", image: it4 },
-                { name: "Mrs. Priyanka Bauddha", designation: "Lecturer Web Designing", department: "Information Technology", image: it5 },
+                { name: "Mrs. Priyanka Bauddha", designation: "Lecturer Web Designing", department: "Information Technology", image: priyanka },
                 { name: "Mr. Shashank Chandra", designation: "Lecturer Web Designing", department: "Information Technology", image: it6 },
                 { name: "Mr. Jai Gurudev Ji", designation: "Lecturer CHN", department: "Information Technology", image: it7 },
                 { name: "Ms. Neha Chaudhary", designation: "Lecturer CHN", department: "Information Technology", image: it8 },
-                { name: "Mrs. Madhu Nirwan", designation: "Computer instructor", department: "Information Technology", image: it10 },
+                { name: "Mrs. Madhu Nirwan", designation: "Computer instructor", department: "Information Technology", image: madhu },
             ]
         },
         {
@@ -131,7 +136,7 @@ const Staff = () => {
             icon: "📡",
             faculty: [
                 { name: "Mr. Vivek Kumar", designation: "HOD", department: "Electronics Engineering", image: electronics },
-                { name: "Mrs. Geeta Awasthi", designation: "Lecturer Electronics", department: "Electronics Engineering", image: electronics1 },
+                { name: "Mrs. Geeta Awasthi", designation: "Lecturer Electronics", department: "Electronics Engineering", image: geeta },
                 { name: "Mrs. Alka Yadav", designation: "Lecturer Electronics", department: "Electronics Engineering", image: electronics2 },
                 { name: "Mrs. Anjana Yadav", designation: "Lecturer Electronics", department: "Electronics Engineering", image: electronics3 },
                 { name: "Mrs. Richa Shukla", designation: "Lecturer Electronics", department: "Electronics Engineering", image: electronics4 },
@@ -151,7 +156,7 @@ const Staff = () => {
             icon: "🎨",
             faculty: [
                 { name: "Mr. Pankaj Jaiswal", designation: "Lecturer IDD", department: "Interior Design", image: interior1 },
-                { name: "Mr. Mukesh Singh", designation: "Lecturer IDD", department: "Interior Design", image: interior2 },
+                { name: "Mr. Mukesh Singh", designation: "Lecturer IDD", department: "Interior Design", image: mukesh },
             ]
         },
         {
@@ -167,7 +172,7 @@ const Staff = () => {
             name: "Faculties of Sciences and Others",
             icon: "🔬",
             faculty: [
-                { name: "Faculty Member", designation: "Professor", department: "Sciences", image: science },
+                { name: "Faculty Member", designation: "Professor", department: "Sciences", image: yogendra },
                 { name: "Faculty Member 1", designation: "Assistant Professor", department: "Sciences", image: science1 },
                 { name: "Faculty Member 2", designation: "Lecturer", department: "Sciences", image: science2 },
                 { name: "Faculty Member 3", designation: "Lecturer", department: "Sciences", image: science3 },
@@ -335,8 +340,14 @@ const Staff = () => {
                 </div>
             </GridBackground>
 
-            {/* Department Tabs */}
-            <section className="py-8 px-4 sticky top-20 z-40" style={{ backgroundColor: '#0B1C2D' }}>
+            {/* Department Tabs - Sticky on scroll */}
+            <section
+                className="py-4 px-4 sticky top-0 z-50 shadow-lg"
+                style={{
+                    backgroundColor: '#0B1C2D',
+                    borderBottom: '2px solid rgba(199, 161, 74, 0.3)'
+                }}
+            >
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-wrap justify-center gap-2 md:gap-3">
                         {departments.map((dept, index) => (

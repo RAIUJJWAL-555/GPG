@@ -146,7 +146,7 @@ const CardNav = ({
         <div className="card-nav-top absolute inset-x-0 top-0 h-[120px] flex items-center justify-between px-4 z-[2]">
           {/* Left Logo */}
           <div className="left-logo-container flex items-center">
-            {leftLogo && <img src={leftLogo} alt={leftLogoAlt} className="logo h-[80px]" />}
+            {leftLogo && <img src={leftLogo} alt={leftLogoAlt} className="logo h-[90px] w-auto object-contain" />}
           </div>
 
           {/* Center - Hamburger Menu */}
@@ -170,7 +170,7 @@ const CardNav = ({
 
           {/* Right Logo */}
           <div className="right-logo-container flex items-center">
-            {rightLogo && <img src={rightLogo} alt={rightLogoAlt} className="logo h-[80px]" />}
+            {rightLogo && <img src={rightLogo} alt={rightLogoAlt} className="logo h-[70px] w-auto object-contain" />}
           </div>
         </div>
 

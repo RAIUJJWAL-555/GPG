@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from '../assets/logo.png';
-import upGovtLog from '../assets/upGovtLog.png';
 
 const Footer = () => {
     return (
@@ -71,10 +70,29 @@ const Footer = () => {
                     </ul>
                 </div>
 
-                {/* Right Side - Social & Copyright */}
+                {/* Right Side - Map & Social */}
                 <div className="flex flex-col max-md:items-center max-md:text-center gap-2 items-end">
-                    <img src={upGovtLog} alt="UP Government Logo" className=" w-30 h-30 object-contain mb-2" />
-                    <p className="whitespace-nowrap">Affiliated with Government of Uttar Pradesh</p>
+                    {/* Google Maps */}
+                    <div className="rounded-lg overflow-hidden border-2 border-[#C7A14A]/30 mb-2">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.0686893441384!2d77.43024067549866!3d28.659015175649665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf157ba72889b%3A0xad4fa5e0b55c6afe!2sGovernment%20Polytechnic%20Ghaziabad!5e0!3m2!1sen!2sin!4v1705670000000!5m2!1sen!2sin"
+                            width="200"
+                            height="120"
+                            style={{ border: 0 }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            title="Government Polytechnic Ghaziabad Location"
+                        />
+                    </div>
+                    <a
+                        href="https://maps.app.goo.gl/p98DLXNCGtLrd9Ux8"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-xs hover:text-[#C7A14A] transition flex items-center gap-1"
+                    >
+                        📍 View on Google Maps
+                    </a>
 
                     {/* Social Media Links */}
                     <div className="flex items-center gap-4 mt-3">
@@ -109,6 +127,33 @@ const Footer = () => {
                     </p>
                 </div>
             </footer>
+
+            {/* Developer Credit */}
+            <div
+                className="text-center py-3 px-4 text-sm"
+                style={{ backgroundColor: '#060E17', color: '#9CA3AF' }}
+            >
+                Designed & Developed by{' '}
+                <a
+                    href="https://www.linkedin.com/in/raiujjwal555/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-semibold hover:underline transition-colors"
+                    style={{ color: '#C7A14A' }}
+                >
+                    Ujjwal Rai
+                </a>
+                {' '}&{' '}
+                <a
+                    href="https://www.linkedin.com/in/anukul-singh-33b251394/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="font-semibold hover:underline transition-colors"
+                    style={{ color: '#C7A14A' }}
+                >
+                    Anukul Singh
+                </a>
+            </div>
         </>
     );
 };
