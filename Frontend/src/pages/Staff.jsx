@@ -133,7 +133,7 @@ const Staff = () => {
                 { name: "Mrs. Alka Yadav", designation: "Lecturer Electronics", department: "Electronics Engineering", image: electronics2 },
                 { name: "Mrs. Anjana Yadav", designation: "Lecturer Electronics", department: "Electronics Engineering", image: electronics3 },
                 { name: "Mrs. Richa Shukla", designation: "Lecturer Electronics", department: "Electronics Engineering", image: electronics4 },
-            { name: "Mrs. Ishita Pathak", designation: "Lecturer Electronics", department: "Electronics Engineering", image: electronics5 },
+                { name: "Mrs. Ishita Pathak", designation: "Lecturer Electronics", department: "Electronics Engineering", image: electronics5 },
                 { name: "Mrs. Shiwangni Chandra", designation: "Lecturer Electronics", department: "Electronics Engineering", image: electronics8 },
             ]
         },
@@ -218,7 +218,7 @@ const Staff = () => {
             <Header />
 
             {/* Hero Section */}
-            <div className="pt-32 pb-16 px-4">
+            <div className="pt-40 pb-16 px-4">
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}

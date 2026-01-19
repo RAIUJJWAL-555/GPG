@@ -21,7 +21,7 @@ const Events = () => {
             <Header />
 
             {/* Hero Section */}
-            <div className="pt-32 pb-16 px-4">
+            <div className="pt-40 pb-16 px-4">
                 {/* Decorative Elements */}
                 <div className="relative">
                     {/* Gold accent circles */}
@@ -198,8 +198,8 @@ const Events = () => {
                     </div>
                 </div>
             </section>
-<hr />
-<hr />
+            <hr />
+            <hr />
             <Footer />
         </div>
     );
