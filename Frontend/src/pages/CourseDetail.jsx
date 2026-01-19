@@ -19,7 +19,7 @@ import it5 from '../assets/staffPics/it5.png';
 import it6 from '../assets/staffPics/it6.png';
 import it7 from '../assets/staffPics/it7.png';
 import it8 from '../assets/staffPics/it8.png';
-import it9 from '../assets/staffPics/it9.png';
+import abhi from '../assets/staffPics/abhisekhsir.png';
 import it10 from '../assets/staffPics/it10.png';
 import electronics from '../assets/staffPics/electronics.png';
 import electronics1 from '../assets/staffPics/electronics1.png';
@@ -76,8 +76,9 @@ const CourseDetail = () => {
             subjects: ["HTML & CSS", "JavaScript", "Responsive Design", "UI/UX Fundamentals", "React.js Basics", "Web Graphics", "CMS Development", "SEO Basics"],
             careers: ["Web Designer", "Frontend Developer", "UI Developer", "Freelance Web Developer"],
             faculty: [
-                { name: null, designation: "Faculty", department: "Web Designing", image: null },
-                { name: null, designation: "Faculty", department: "Web Designing", image: null },
+                { name: "Mrs. Akanksha Singh", designation: "Lecturer Web Designing", department: "Information Technology", image: it4 },
+                { name: "Mrs. Priyanka Bauddha", designation: "Lecturer Web Designing", department: "Information Technology", image: it5 },
+                { name: "Mr. Shashank Chandra", designation: "Lecturer Web Designing", department: "Information Technology", image: it6 },
             ]
         },
         pgdchn: {
@@ -100,8 +101,9 @@ const CourseDetail = () => {
             subjects: ["Computer Hardware", "Operating Systems", "Networking Fundamentals", "Server Administration", "Network Security", "Cisco Routing", "Troubleshooting", "Cloud Basics"],
             careers: ["Hardware Engineer", "Network Administrator", "IT Support Specialist", "System Administrator"],
             faculty: [
-                { name: null, designation: "Faculty", department: "CHN", image: null },
-                { name: null, designation: "Faculty", department: "CHN", image: null },
+                { name: "Mr. Abhishek Chandra", designation: "Lecturer CHN", department: "Information Technology", image: abhi },
+                { name: "Mr. Jai Gurudev Ji", designation: "Lecturer CHN", department: "Information Technology", image: it7 },
+                { name: "Ms. Neha Chaudhary", designation: "Lecturer CHN", department: "Information Technology", image: it8 },
             ]
         },
         pgdiot: {
@@ -361,154 +363,6 @@ const CourseDetail = () => {
                 { name: "Ms. Neha Chaudhary", designation: "Lecturer CHN", department: "Information Technology", image: it8 },
                 { name: "Mr. Abhishek Chandra", designation: "Lecturer CHN", department: "Information Technology", image: it9 },
                 { name: "Mrs. Madhu Nirwan", designation: "Computer Instructor", department: "Information Technology", image: it10 },
-            ]
-        },
-        // Lateral Entry Courses
-        'civil-lateral': {
-            name: "Civil Engineering [Lateral Entry]",
-            icon: "🏗️",
-            color: "#F97316",
-            duration: "2 Years",
-            intake: "6 Students",
-            eligibility: "Intermediate Passed or ITI 2 Year",
-            category: "Lateral Entry",
-            description: "Direct entry into second year of Civil Engineering diploma for students who have completed intermediate or 2-year ITI course.",
-            highlights: [
-                "Direct 2nd year admission",
-                "Intensive 2-year program",
-                "Same curriculum as regular diploma",
-                "Full practical exposure",
-                "Industry internship",
-                "Placement assistance"
-            ],
-            subjects: ["Structural Engineering", "Concrete Technology", "Estimating & Costing", "Highway Engineering", "Environmental Engineering", "Construction Management"],
-            careers: ["Site Engineer", "Surveyor", "Construction Supervisor", "Quantity Surveyor"],
-            faculty: [
-                { name: "Mr. Shailendra Pratap Singh", designation: "HOD", department: "Civil Engineering", image: civil1 },
-                { name: "Mr. Rahul Singh", designation: "Lecturer Civil", department: "Civil Engineering", image: civil2 },
-                { name: "Mrs. Garima Singh", designation: "Lecturer Civil", department: "Civil Engineering", image: civil3 },
-            ]
-        },
-        'electronics-lateral': {
-            name: "Electronics Engineering [Lateral Entry]",
-            icon: "📡",
-            color: "#A855F7",
-            duration: "2 Years",
-            intake: "6 Students",
-            eligibility: "Intermediate Passed or ITI 2 Year",
-            category: "Lateral Entry",
-            description: "Direct entry into second year of Electronics Engineering diploma for students with relevant background.",
-            highlights: [
-                "Direct 2nd year admission",
-                "Advanced electronics training",
-                "Lab practical sessions",
-                "Project-based learning",
-                "Industry exposure",
-                "Certification prep"
-            ],
-            subjects: ["Communication Systems", "Microprocessors", "Control Systems", "Industrial Electronics", "PCB Design", "Embedded Systems"],
-            careers: ["Electronics Technician", "PCB Designer", "Service Engineer", "Quality Control Engineer"],
-            faculty: [
-                { name: "Mr. Vivek Kumar", designation: "HOD", department: "Electronics Engineering", image: electronics },
-                { name: "Mrs. Geeta Awasthi", designation: "Lecturer Electronics", department: "Electronics Engineering", image: electronics1 },
-                { name: "Mrs. Alka Yadav", designation: "Lecturer Electronics", department: "Electronics Engineering", image: electronics2 },
-            ]
-        },
-        'mech-auto-lateral': {
-            name: "Mechanical Engineering (Automobile) [Lateral Entry]",
-            icon: "🚗",
-            color: "#EF4444",
-            duration: "2 Years",
-            intake: "6 Students",
-            eligibility: "Intermediate Passed or ITI 2 Year",
-            category: "Lateral Entry",
-            description: "Direct entry into second year of Mechanical (Automobile) Engineering diploma.",
-            highlights: [
-                "Direct 2nd year admission",
-                "Automobile specialization",
-                "Workshop training",
-                "Vehicle maintenance skills",
-                "Industry internship",
-                "EV exposure"
-            ],
-            subjects: ["Vehicle Dynamics", "Automotive Electrical", "Vehicle Maintenance", "Transmission Systems", "Chassis & Suspension", "EV Fundamentals"],
-            careers: ["Automobile Engineer", "Service Manager", "Vehicle Inspector"],
-            faculty: [
-                { name: "Mrs. Naznin Khan", designation: "HOD", department: "Mechanical Engineering", image: mechanical },
-                { name: null, designation: "Faculty", department: "Mechanical", image: null },
-            ]
-        },
-        'mech-cad-lateral': {
-            name: "Mechanical Engineering (CAD) [Lateral Entry]",
-            icon: "⚙️",
-            color: "#6366F1",
-            duration: "2 Years",
-            intake: "6 Students",
-            eligibility: "Intermediate Passed or ITI 2 Year",
-            category: "Lateral Entry",
-            description: "Direct entry into second year of Mechanical (CAD) Engineering diploma with focus on design software.",
-            highlights: [
-                "Direct 2nd year admission",
-                "CAD software mastery",
-                "CNC programming",
-                "3D modeling projects",
-                "Industry-standard tools",
-                "Design portfolio"
-            ],
-            subjects: ["SolidWorks Advanced", "CATIA", "CNC Programming", "Machine Design", "3D Modeling", "CAM Operations"],
-            careers: ["CAD Designer", "CAM Programmer", "Design Engineer", "CNC Operator"],
-            faculty: [
-                { name: "Mrs. Naznin Khan", designation: "HOD", department: "Mechanical Engineering", image: mechanical },
-                { name: null, designation: "Faculty", department: "Mechanical", image: null },
-            ]
-        },
-        'mech-prod-lateral': {
-            name: "Mechanical Engineering (Production) [Lateral Entry]",
-            icon: "🔧",
-            color: "#EC4899",
-            duration: "2 Years",
-            intake: "6 Students",
-            eligibility: "Intermediate Passed or ITI 2 Year",
-            category: "Lateral Entry",
-            description: "Direct entry into second year of Mechanical (Production) Engineering diploma focusing on manufacturing.",
-            highlights: [
-                "Direct 2nd year admission",
-                "Production specialization",
-                "Quality control training",
-                "Workshop experience",
-                "Industrial visits",
-                "Lean manufacturing"
-            ],
-            subjects: ["Production Planning", "Quality Control", "Industrial Management", "Tool Engineering", "Lean Manufacturing", "Safety Engineering"],
-            careers: ["Production Engineer", "Quality Inspector", "Plant Supervisor"],
-            faculty: [
-                { name: "Mrs. Naznin Khan", designation: "HOD", department: "Mechanical Engineering", image: mechanical },
-                { name: null, designation: "Faculty", department: "Mechanical", image: null },
-            ]
-        },
-        'it-lateral': {
-            name: "Information Technology [Lateral Entry] (CAD)",
-            icon: "💻",
-            color: "#3B82F6",
-            duration: "2 Years",
-            intake: "6 Students",
-            eligibility: "Intermediate Passed or ITI 2 Year",
-            category: "Lateral Entry",
-            description: "Direct entry into second year of Information Technology diploma with CAD specialization.",
-            highlights: [
-                "Direct 2nd year admission",
-                "IT with CAD focus",
-                "Programming & design",
-                "Database management",
-                "Project development",
-                "Placement support"
-            ],
-            subjects: ["Database Management", "Computer Networks", "Software Engineering", "Python Programming", "CAD Tools", "Cloud Computing"],
-            careers: ["Software Developer", "CAD Specialist", "IT Support Engineer"],
-            faculty: [
-                { name: "Ms. Fatema Siddiqua", designation: "HOD", department: "Information Technology", image: it },
-                { name: "Mrs. Anamika", designation: "Lecturer Information Technology", department: "Information Technology", image: it1 },
-                { name: "Mr. Amit Patel", designation: "Lecturer Computer", department: "Information Technology", image: it3 },
             ]
         }
     };

@@ -95,7 +95,7 @@ const Staff = () => {
     // Staff data - Principal
     const leadership = [
         {
-            name: "Principal",
+            name: "Dr. JanaBeg Loni",
             designation: "Principal",
             department: "Administration",
             image: principle,
@@ -172,50 +172,50 @@ const Staff = () => {
             name: "Faculties of Sciences and Others",
             icon: "🔬",
             faculty: [
-                { name: "Faculty Member", designation: "Professor", department: "Sciences", image: yogendra },
-                { name: "Faculty Member 1", designation: "Assistant Professor", department: "Sciences", image: science1 },
-                { name: "Faculty Member 2", designation: "Lecturer", department: "Sciences", image: science2 },
-                { name: "Faculty Member 3", designation: "Lecturer", department: "Sciences", image: science3 },
-                { name: "Faculty Member 4", designation: "Lecturer", department: "Sciences", image: science4 },
+                { name: "Dr. Yogendra Singh", designation: "Lecturer Chemistry", department: "Sciences", image: yogendra },
+                { name: "Mr. Shiv Kumar", designation: "Lecturer Maths", department: "Sciences", image: science1 },
+                { name: "Mrs. Pooja Maurya", designation: "Lecturer Electrical", department: "Sciences", image: science2 },
+                { name: "Mr. Rajkumar", designation: "Lecturer Physics", department: "Sciences", image: science3 },
+                { name: "Mrs. Sarabjit Kaur", designation: "Librarian", department: "Sciences", image: science4 },
             ]
         },
         {
             name: "Workshop Staff",
             icon: "🔧",
             faculty: [
-                { name: "Staff Member", designation: "Superintendent", department: "Workshop", image: workshop },
-                { name: "Staff Member 1", designation: "Foreman", department: "Workshop", image: workshop1 },
-                { name: "Staff Member 2", designation: "Technician", department: "Workshop", image: workshop2 },
-                { name: "Staff Member 3", designation: "Technician", department: "Workshop", image: workshop3 },
-                { name: "Staff Member 4", designation: "Technician", department: "Workshop", image: workshop4 },
-                { name: "Staff Member 5", designation: "Helper", department: "Workshop", image: workshop5 },
-                { name: "Staff Member 6", designation: "Helper", department: "Workshop", image: workshop6 },
-                { name: "Staff Member 7", designation: "Helper", department: "Workshop", image: workshop7 },
-                { name: "Staff Member 8", designation: "Helper", department: "Workshop", image: workshop8 },
+                { name: "Mr. Arun Kesari", designation: "Workshop Sup.", department: "Workshop", image: workshop },
+                { name: "Mr. Jagat Singh", designation: "Workshop Instructor", department: "Workshop", image: workshop1 },
+                { name: "Mr. Devendra Sharma", designation: "Workshop Instructor", department: "Workshop", image: workshop2 },
+                { name: "Mr. Jogender Singh", designation: "Workshop Instructor", department: "Workshop", image: workshop3 },
+                { name: "Mr. Rajendra Singh", designation: "Workshop Instructor", department: "Workshop", image: workshop4 },
+                { name: "Mr. Manoj Kumar", designation: "Workshop Instructor", department: "Workshop", image: workshop5 },
+                { name: "Mr. Bharat Bandhu Vimal", designation: "Workshop Instructor", department: "Workshop", image: workshop6 },
+                { name: "Mrs. Prabha", designation: "Workshop Instructor", department: "Workshop", image: workshop7 },
+                { name: "Mr. Sonu Kumar", designation: "Workshop Instructor", department: "Workshop", image: workshop8 },
             ]
         },
         {
             name: "Ministerial Staff",
             icon: "📋",
             faculty: [
-                { name: "Staff Member", designation: "Head Clerk", department: "Administration", image: ministerial },
-                { name: "Staff Member 1", designation: "Senior Clerk", department: "Administration", image: ministerial1 },
-                { name: "Staff Member 2", designation: "Accountant", department: "Accounts", image: ministerial2 },
-                { name: "Staff Member 3", designation: "Clerk", department: "Administration", image: ministerial3 },
-                { name: "Staff Member 4", designation: "Clerk", department: "Administration", image: ministerial4 },
-                { name: "Staff Member 5", designation: "Junior Clerk", department: "Administration", image: ministerial5 },
+                { name: "Mr. Mahendra Bhaskar", designation: "Principal Assistant", department: "Administration", image: ministerial },
+                { name: "Mrs. Srishti Budhauliya", designation: "Stenographer", department: "Administration", image: ministerial1 },
+                { name: "Mr. Saurabh Patel", designation: "Junior Assistant", department: "Accounts", image: ministerial2 },
+                { name: "Mr. Sunil Yadav", designation: "Junior Assistant", department: "Administration", image: ministerial3 },
+                { name: "Mr. Ghanshyam Singh", designation: "Accountant", department: "Administration", image: ministerial4 },
+                { name: "Mr. Dhiraj Singh", designation: "Junior Assistant", department: "Administration", image: ministerial5 },
             ]
         },
         {
             name: "Class-4 Staff",
             icon: "🧹",
             faculty: [
-                { name: "Staff Member", designation: "Peon", department: "Support Staff", image: class4 },
-                { name: "Staff Member 1", designation: "Peon", department: "Support Staff", image: class4_1 },
-                { name: "Staff Member 2", designation: "Sweeper", department: "Support Staff", image: class4_2 },
-                { name: "Staff Member 3", designation: "Gardener", department: "Support Staff", image: class4_3 },
-                { name: "Staff Member 4", designation: "Helper", department: "Support Staff", image: class4_4 },
-                { name: "Staff Member 5", designation: "Helper", department: "Support Staff", image: class4_5 },
+                { name: "Mr. Vijay Kumar Kaim", designation: "", department: "Support Staff", image: class4 },
+                { name: "Mrs. Anju", designation: "", department: "Support Staff", image: class4_1 },
+                { name: "Mr. Gaurav Kumar", designation: "", department: "Support Staff", image: class4_2 },
+                { name: "Mr. Lakhan Kumar", designation: "", department: "Support Staff", image: class4_3 },
+                { name: "Mr. Surendra Kumar", designation: "", department: "Support Staff", image: class4_4 },
+                { name: "Mr. Ravi Kumar", designation: "", department: "Support Staff", image: class4_5 },
             ]
         }
     ];

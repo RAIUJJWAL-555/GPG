@@ -132,74 +132,12 @@ const CoursesPage = () => {
             icon: '💻',
             color: '#3B82F6'
         },
-        // Lateral Entry Courses
-        {
-            id: 'civil-lateral',
-            name: 'Civil Engineering [Lateral Entry]',
-            category: 'lateral',
-            duration: '2 Years',
-            intake: '06',
-            eligibility: 'Intermediate Passed or ITI 2 Year',
-            icon: '🏗️',
-            color: '#F97316'
-        },
-        {
-            id: 'electronics-lateral',
-            name: 'Electronics Engineering [Lateral Entry]',
-            category: 'lateral',
-            duration: '2 Years',
-            intake: '06',
-            eligibility: 'Intermediate Passed or ITI 2 Year',
-            icon: '📡',
-            color: '#A855F7'
-        },
-        {
-            id: 'mech-auto-lateral',
-            name: 'Mechanical Engineering (Automobile) [Lateral Entry]',
-            category: 'lateral',
-            duration: '2 Years',
-            intake: '06',
-            eligibility: 'Intermediate Passed or ITI 2 Year',
-            icon: '🚗',
-            color: '#EF4444'
-        },
-        {
-            id: 'mech-cad-lateral',
-            name: 'Mechanical Engineering (CAD) [Lateral Entry]',
-            category: 'lateral',
-            duration: '2 Years',
-            intake: '06',
-            eligibility: 'Intermediate Passed or ITI 2 Year',
-            icon: '⚙️',
-            color: '#6366F1'
-        },
-        {
-            id: 'mech-prod-lateral',
-            name: 'Mechanical Engineering (Production) [Lateral Entry]',
-            category: 'lateral',
-            duration: '2 Years',
-            intake: '06',
-            eligibility: 'Intermediate Passed or ITI 2 Year',
-            icon: '🔧',
-            color: '#EC4899'
-        },
-        {
-            id: 'it-lateral',
-            name: 'Information Technology [Lateral Entry] (CAD)',
-            category: 'lateral',
-            duration: '2 Years',
-            intake: '06',
-            eligibility: 'Intermediate Passed or ITI 2 Year',
-            icon: '💻',
-            color: '#3B82F6'
-        },
     ];
 
     const categories = [
         { id: 'all', label: 'All Courses', icon: '📚' },
         { id: 'pg-diploma', label: 'PG Diploma', icon: '🎓' },
         { id: 'diploma', label: 'Diploma', icon: '📜' },
-        { id: 'lateral', label: 'Lateral Entry', icon: '🔄' },
     ];
 
     const filteredCourses = activeCategory === 'all'
@@ -358,10 +296,9 @@ const CoursesPage = () => {
             <section className="py-16 px-4" style={{ backgroundColor: '#0B1C2D' }}>
                 <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                     {[
-                        { value: '18', label: 'Total Courses' },
+                        { value: '12', label: 'Total Courses' },
                         { value: '4', label: 'PG Diploma Programs' },
                         { value: '8', label: 'Diploma Programs' },
-                        { value: '6', label: 'Lateral Entry Options' },
                     ].map((stat, index) => (
                         <motion.div
                             key={index}

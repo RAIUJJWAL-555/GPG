@@ -8,7 +8,6 @@ import Events from './pages/Events.jsx'
 import CourseDetail from './pages/CourseDetail.jsx'
 import CoursesPage from './pages/CoursesPage.jsx'
 import Syllabus from './pages/Syllabus.jsx'
-import PlacementCell from './pages/PlacementCell.jsx'
 
 function App() {
 
@@ -21,7 +20,6 @@ function App() {
         <Route path="/courses" element={<CoursesPage />} />
         <Route path="/course/:courseId" element={<CourseDetail />} />
         <Route path="/syllabus" element={<Syllabus />} />
-        <Route path="/placement-cell" element={<PlacementCell />} />
       </Routes>
     </>
   )
