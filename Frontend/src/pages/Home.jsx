@@ -2,6 +2,9 @@ import React from 'react'
 import Header from '../Section/Header.jsx'
 import Hero from '../Section/Hero.jsx'
 import Gallery from '../components/Gallery.jsx'
+import NoticeBoard from '../components/NoticeBoard.jsx'
+import Courses from '../components/Courses.jsx'
+import MainShowcase from '../components/MainShowcase.jsx'
 import Footer from '../components/Footer.jsx'
 
 const Home = () => {
@@ -10,6 +13,9 @@ const Home = () => {
       <Header />
       <Hero />
       <Gallery />
+      <NoticeBoard />
+      <Courses />
+      <MainShowcase />
       <Footer />
     </div>
   )
