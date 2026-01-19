@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../Section/Header';
 import Footer from '@/components/Footer';
 import Gallery2 from '@/components/Gallery2';
+import GridBackground from '@/components/GridBackground';
 
 const Events = () => {
     const mainEvents = [
@@ -137,10 +138,7 @@ const Events = () => {
             </div>
 
             {/* Stats Section */}
-            <div
-                className="py-16 px-4"
-                style={{ backgroundColor: 'rgba(199, 161, 74, 0.05)' }}
-            >
+            <GridBackground className="py-16 px-4">
                 <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                     <div>
                         <h3 className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#C7A14A' }}>50+</h3>
@@ -159,7 +157,7 @@ const Events = () => {
                         <p style={{ color: '#9CA3AF' }}>Student Engagement</p>
                     </div>
                 </div>
-            </div>
+            </GridBackground>
 
             {/* Gallery2 Section with Cream Background */}
             <Gallery2 />
@@ -201,7 +199,7 @@ const Events = () => {
             <hr />
             <hr />
             <Footer />
-        </div>
+        </div >
     );
 }
 

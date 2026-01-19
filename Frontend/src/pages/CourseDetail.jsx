@@ -4,6 +4,7 @@ import Header from '../Section/Header';
 import Footer from '../components/Footer';
 import StaffCard from '../components/StaffCard';
 import StaffModal from '../components/StaffModal';
+import GridBackground from '../components/GridBackground';
 import { motion } from 'framer-motion';
 
 // Import staff images
@@ -613,7 +614,7 @@ const CourseDetail = () => {
             </section>
 
             {/* About Section */}
-            <section className="py-16 px-4">
+            <GridBackground className="py-16 px-4">
                 <div className="max-w-6xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-12">
                         {/* Description */}
@@ -663,7 +664,7 @@ const CourseDetail = () => {
                         </motion.div>
                     </div>
                 </div>
-            </section>
+            </GridBackground>
 
             {/* Subjects Section */}
             <section className="py-16 px-4" style={{ backgroundColor: '#0B1C2D' }}>
@@ -704,7 +705,7 @@ const CourseDetail = () => {
             </section>
 
             {/* Faculty Section */}
-            <section className="py-16 px-4">
+            <GridBackground className="py-16 px-4">
                 <div className="max-w-7xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -743,7 +744,7 @@ const CourseDetail = () => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </GridBackground>
 
             {/* Career Options */}
             <section className="py-16 px-4" style={{ backgroundColor: '#0B1C2D' }}>

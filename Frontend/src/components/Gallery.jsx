@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectCoverflow, Keyboard } from 'swiper/modules';
 import { motion } from 'framer-motion';
 import { Heart, Eye, Maximize2 } from 'lucide-react';
+import GridBackground from './GridBackground';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
@@ -11,12 +12,8 @@ import Btn from '../components/Btn.jsx';
 
 const Gallery = () => {
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="py-20" style={{ backgroundColor: '#F8F6F2' }}
+        <GridBackground
+            className="py-20"
         >
             <div className="container mx-auto px-4">
                 <motion.div
@@ -158,7 +155,7 @@ const Gallery = () => {
                     overflow: hidden;
                 }
             `}</style>
-        </motion.div>
+        </GridBackground>
     );
 }
 export default Gallery

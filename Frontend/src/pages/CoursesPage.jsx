@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Section/Header';
 import Footer from '../components/Footer';
+import GridBackground from '../components/GridBackground';
 import { motion } from 'framer-motion';
 
 const CoursesPage = () => {
@@ -239,7 +240,11 @@ const CoursesPage = () => {
             </div>
 
             {/* Category Filter */}
-            <section className="py-8 px-4 sticky top-20 z-40" style={{ backgroundColor: '#F8F6F2', borderBottom: '1px solid rgba(11, 28, 45, 0.1)' }}>
+            <GridBackground
+                className="py-8 px-4 sticky top-20 z-40"
+                showGrid={false}
+                style={{ borderBottom: '1px solid rgba(11, 28, 45, 0.1)' }}
+            >
                 <div className="max-w-7xl mx-auto">
                     <div className="flex flex-wrap justify-center gap-3">
                         {categories.map((cat) => (
@@ -251,7 +256,9 @@ const CoursesPage = () => {
                                 style={{
                                     backgroundColor: activeCategory === cat.id ? '#C7A14A' : 'white',
                                     color: activeCategory === cat.id ? '#0B1C2D' : '#0B1C2D',
-                                    border: '1px solid rgba(199, 161, 74, 0.3)'
+                                    border: '1px solid rgba(199, 161, 74, 0.3)',
+                                    position: 'relative',
+                                    zIndex: 10
                                 }}
                             >
                                 <span className="mr-2">{cat.icon}</span>
@@ -269,10 +276,10 @@ const CoursesPage = () => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </GridBackground>
 
             {/* Courses Grid */}
-            <section className="py-12 px-4">
+            <GridBackground className="py-12 px-4">
                 <div className="max-w-7xl mx-auto">
                     <motion.div
                         key={activeCategory}
@@ -289,6 +296,7 @@ const CoursesPage = () => {
                                 transition={{ duration: 0.4, delay: index * 0.05 }}
                                 onClick={() => navigate(`/course/${course.id}`)}
                                 className="group cursor-pointer rounded-2xl overflow-hidden bg-white transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+                                style={{ position: 'relative', zIndex: 10 }}
                             >
                                 {/* Header with Icon */}
                                 <div
@@ -344,7 +352,7 @@ const CoursesPage = () => {
                         ))}
                     </motion.div>
                 </div>
-            </section>
+            </GridBackground>
 
             {/* Stats */}
             <section className="py-16 px-4" style={{ backgroundColor: '#0B1C2D' }}>
@@ -370,7 +378,7 @@ const CoursesPage = () => {
             </section>
 
             {/* Why Choose Us */}
-            <section className="py-16 px-4" style={{ backgroundColor: 'rgba(199, 161, 74, 0.1)' }}>
+            <GridBackground className="py-16 px-4">
                 <div className="max-w-6xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -399,6 +407,7 @@ const CoursesPage = () => {
                                 transition={{ duration: 0.4, delay: index * 0.1 }}
                                 viewport={{ once: true }}
                                 className="p-6 rounded-xl text-center bg-white shadow-lg"
+                                style={{ position: 'relative', zIndex: 10 }}
                             >
                                 <span className="text-4xl block mb-3">{item.icon}</span>
                                 <h3 className="font-bold mb-1" style={{ color: '#0B1C2D' }}>{item.title}</h3>
@@ -407,7 +416,7 @@ const CoursesPage = () => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </GridBackground>
 
             <Footer />
         </div>

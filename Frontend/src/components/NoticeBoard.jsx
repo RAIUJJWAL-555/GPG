@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import GridBackground from './GridBackground';
 
 const NoticeBoard = () => {
     const [activeNotice, setActiveNotice] = useState(0);
@@ -74,7 +75,7 @@ const NoticeBoard = () => {
     };
 
     return (
-        <section className="py-20 px-4" style={{ backgroundColor: '#F8F6F2' }}>
+        <GridBackground className="py-20 px-4">
             <div className="max-w-7xl mx-auto">
                 {/* Section Header */}
                 <motion.div
@@ -240,8 +241,8 @@ const NoticeBoard = () => {
                                     viewport={{ once: true }}
                                     onClick={() => setActiveNotice(index)}
                                     className={`p-4 rounded-xl cursor-pointer transition-all duration-300 border-2 ${index === activeNotice
-                                            ? 'border-[#C7A14A] shadow-lg'
-                                            : 'border-transparent hover:border-[#C7A14A]/30'
+                                        ? 'border-[#C7A14A] shadow-lg'
+                                        : 'border-transparent hover:border-[#C7A14A]/30'
                                         }`}
                                     style={{
                                         backgroundColor: index === activeNotice ? 'white' : 'rgba(255,255,255,0.5)'
@@ -320,7 +321,7 @@ const NoticeBoard = () => {
                     overflow: hidden;
                 }
             `}</style>
-        </section>
+        </GridBackground>
     );
 };
 

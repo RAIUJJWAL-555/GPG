@@ -2,6 +2,7 @@ import Header from '@/Section/Header';
 import Footer from '@/components/Footer';
 import StaffCard from '@/components/StaffCard';
 import StaffModal from '@/components/StaffModal';
+import GridBackground from '@/components/GridBackground';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -22,6 +23,7 @@ import it7 from '../assets/staffPics/it7.png';
 import it8 from '../assets/staffPics/it8.png';
 import it9 from '../assets/staffPics/it9.png';
 import it10 from '../assets/staffPics/it10.png';
+import abhiSir from '../assets/staffPics/abhisekhsir.png'
 // Electronics
 import electronics from '../assets/staffPics/electronics.png';
 import electronics1 from '../assets/staffPics/electronics1.png';
@@ -114,13 +116,13 @@ const Staff = () => {
             faculty: [
                 { name: "Ms. Fatema Siddiqua", designation: "HOD", department: "Information Technology", image: it },
                 { name: "Mrs. Anamika ", designation: "Lecturer Information Technology", department: "Information Technology", image: it1 },
+                { name: "Mr. Abhishek Chandra", designation: "Lecturer CHN", department: "Information Technology", image: abhiSir },
                 { name: "Mr. Amit Patel", designation: "Lecturer Computer", department: "Information Technology", image: it3 },
                 { name: "Mrs. Akanksha Singh", designation: "Lecturer Web Designing", department: "Information Technology", image: it4 },
                 { name: "Mrs. Priyanka Bauddha", designation: "Lecturer Web Designing", department: "Information Technology", image: it5 },
                 { name: "Mr. Shashank Chandra", designation: "Lecturer Web Designing", department: "Information Technology", image: it6 },
                 { name: "Mr. Jai Gurudev Ji", designation: "Lecturer CHN", department: "Information Technology", image: it7 },
                 { name: "Ms. Neha Chaudhary", designation: "Lecturer CHN", department: "Information Technology", image: it8 },
-                { name: "Mr. Abhishek Chandra", designation: "Lecturer CHN", department: "Information Technology", image: it9 },
                 { name: "Mrs. Madhu Nirwan", designation: "Computer instructor", department: "Information Technology", image: it10 },
             ]
         },
@@ -246,7 +248,7 @@ const Staff = () => {
             </div>
 
             {/* Principal Section */}
-            <section className="py-16 px-4" style={{ backgroundColor: '#F8F6F2' }}>
+            <GridBackground className="py-16 px-4">
                 <div className="max-w-7xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -261,22 +263,77 @@ const Staff = () => {
                         <div className="w-20 h-1 mx-auto rounded-full" style={{ backgroundColor: '#C7A14A' }} />
                     </motion.div>
 
-                    <div className="flex justify-center">
-                        {leadership.map((staff, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                viewport={{ once: true }}
-                                onClick={() => handleCardClick(staff)}
+                    <div className="flex flex-col lg:flex-row justify-center items-center gap-8">
+                        {/* Principal Card */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5 }}
+                            viewport={{ once: true }}
+                        >
+                            {leadership.map((staff, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    viewport={{ once: true }}
+                                    onClick={() => handleCardClick(staff)}
+                                >
+                                    <StaffCard {...staff} />
+                                </motion.div>
+                            ))}
+                        </motion.div>
+
+                        {/* Principal's Message */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            viewport={{ once: true }}
+                            className="max-w-2xl"
+                        >
+                            <div
+                                className="text-center py-12 px-8 rounded-2xl relative overflow-hidden"
+                                style={{ backgroundColor: 'rgba(11, 28, 45, 0.03)', border: '1px solid rgba(199, 161, 74, 0.2)' }}
                             >
-                                <StaffCard {...staff} />
-                            </motion.div>
-                        ))}
+                                <blockquote className="relative">
+                                    <span
+                                        className="absolute -top-6 -left-2 text-8xl font-serif opacity-20"
+                                        style={{ color: '#C7A14A' }}
+                                    >
+                                        "
+                                    </span>
+                                    <p
+                                        className="text-lg md:text-xl italic font-medium leading-relaxed relative z-10"
+                                        style={{ color: '#0B1C2D' }}
+                                    >
+                                        Our mission is to provide a transformative educational experience that empowers students to become lifelong learners and responsible global citizens. We believe in nurturing both academic excellence and character.
+                                    </p>
+                                    <span
+                                        className="absolute -bottom-10 -right-2 text-8xl font-serif opacity-20"
+                                        style={{ color: '#C7A14A' }}
+                                    >
+                                        "
+                                    </span>
+                                    <footer className="mt-8">
+                                        <div className="w-16 h-1 mx-auto mb-4 rounded-full" style={{ backgroundColor: '#C7A14A' }} />
+                                        <cite className="not-italic font-bold text-lg" style={{ color: '#0B1C2D' }}>
+                                            Dr. JanaBeg Loni
+                                        </cite>
+                                        <p
+                                            className="text-sm uppercase tracking-widest mt-1 font-semibold"
+                                            style={{ color: '#C7A14A' }}
+                                        >
+                                            Principal's Message
+                                        </p>
+                                    </footer>
+                                </blockquote>
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
-            </section>
+            </GridBackground>
 
             {/* Department Tabs */}
             <section className="py-8 px-4 sticky top-20 z-40" style={{ backgroundColor: '#0B1C2D' }}>
@@ -306,7 +363,7 @@ const Staff = () => {
             </section>
 
             {/* Active Department Faculty */}
-            <section className="py-16 px-4" style={{ backgroundColor: '#F8F6F2' }}>
+            <GridBackground className="py-16 px-4">
                 <div className="max-w-7xl mx-auto">
                     <motion.div
                         key={activeTab}
@@ -345,7 +402,7 @@ const Staff = () => {
                         ))}
                     </motion.div>
                 </div>
-            </section>
+            </GridBackground>
 
             {/* All Departments Quick View */}
             <section className="py-16 px-4" style={{ backgroundColor: '#0B1C2D' }}>

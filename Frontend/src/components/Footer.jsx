@@ -8,7 +8,7 @@ const Footer = () => {
             <style>{`
                 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
             `}</style>
-<hr />
+            <hr />
             <footer
                 className="flex flex-wrap justify-between items-center overflow-hidden gap-6 md:gap-10 py-10 px-6 md:px-16 lg:px-24 xl:px-32 text-[13px]"
                 style={{ backgroundColor: '#0B1C2D', color: '#9CA3AF' }}
@@ -17,8 +17,8 @@ const Footer = () => {
                 <div className="flex items-center gap-4">
                     <img src={logo} alt="College Logo" className="w-50 h-50 object-contain" />
                     <div>
-                        <h3 className="text-white font-semibold text-lg">Our College</h3>
-                        <p className="text-sm" style={{ color: '#C7A14A' }}>Excellence in Education</p>
+                        <h3 className="text-white font-semibold text-lg">Government Polytechnic</h3>
+                        <p className="text-sm" style={{ color: '#C7A14A' }}>Ghaziabad</p>
                     </div>
                 </div>
 
@@ -49,24 +49,24 @@ const Footer = () => {
                 <div>
                     <p className="font-semibold" style={{ color: '#F8F6F2' }}>Contact Us</p>
                     <ul className="mt-2 space-y-1">
-                        <li className="flex items-center gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <li className="flex items-start gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
-                            <span>Uttar Pradesh, India</span>
+                            <span>D Block, Shastri Nagar,<br />Ghaziabad - 201002, UP</span>
                         </li>
                         <li className="flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
-                            <span>info@college.edu.in</span>
+                            <a href="mailto:principalgpg@gmail.com" className="hover:text-[#C7A14A] transition">principalgpg@gmail.com</a>
                         </li>
                         <li className="flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                             </svg>
-                            <span>+91 XXXXXXXXXX</span>
+                            <a href="tel:+911202719500" className="hover:text-[#C7A14A] transition">+91-120-2719500</a>
                         </li>
                     </ul>
                 </div>
@@ -105,7 +105,7 @@ const Footer = () => {
 
                     {/* Copyright */}
                     <p className="mt-3 text-center">
-                        © 2026 <span style={{ color: '#C7A14A' }}>Our College</span>. All Rights Reserved.
+                        © 2026 <span style={{ color: '#C7A14A' }}>Government Polytechnic Ghaziabad</span>. All Rights Reserved.
                     </p>
                 </div>
             </footer>
