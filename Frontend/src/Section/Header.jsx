@@ -13,6 +13,7 @@ function Header() {
       textColor: "#F8F6F2",
       links: [
         { label: "Home", ariaLabel: "Home page", href: '/' },
+        { label: "About College", ariaLabel: "About College Legacy", href: '/about' },
         { label: "Staff", ariaLabel: "College staff information", href: '/staff' },
         { label: "Courses", ariaLabel: "Courses offered by college", href: '/courses' },
         { label: "Events", ariaLabel: "College events and activities", href: '/events' },
@@ -50,9 +51,8 @@ function Header() {
         ease="circ.out"
         items={items}
         leftLogo={logo}
-        leftLogoAlt="College Logo"
-        rightLogo={upGovtLogo}
-        rightLogoAlt="UP Government Logo"
+        leftLogoAlt="GPG Logo"
+        title="Government Polytechnic Ghaziabad"
       />
     </>
   )

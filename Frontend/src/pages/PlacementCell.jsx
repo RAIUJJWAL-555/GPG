@@ -5,14 +5,16 @@ import Footer from '../components/Footer';
 import GridBackground from '../components/GridBackground';
 import placementImg1 from '../assets/PhotoshopExtension_Image.png';
 import placementImg2 from '../assets/PhotoshopExtension_Image (1).png';
+import rahulSirImg from '../assets/staffPics/civil2.png';
+import fatemaMamImg from '../assets/staffPics/it.png';
 
 const TopRecruiters = [
-    { name: "TCS", logo: "🏢" },
-    { name: "Wipro", logo: "🏢" },
-    { name: "Infosys", logo: "🏢" },
-    { name: "HCL", logo: "🏢" },
-    { name: "Tech Mahindra", logo: "🏢" },
-    { name: "L&T", logo: "🏗️" },
+    { name: "Hero", logo: "https://logo.clearbit.com/heromotocorp.com" },
+    { name: "Wipro", logo: "https://logo.clearbit.com/wipro.com" },
+    { name: "Infosys", logo: "https://logo.clearbit.com/infosys.com" },
+    { name: "HCL", logo: "https://logo.clearbit.com/hcltech.com" },
+    { name: "Tech Mahindra", logo: "https://logo.clearbit.com/techmahindra.com" },
+    { name: "L&T", logo: "https://logo.clearbit.com/larsentoubro.com" },
 ];
 
 const PlacementCell = () => {
@@ -77,9 +79,9 @@ const PlacementCell = () => {
                                     <motion.div
                                         key={index}
                                         whileHover={{ scale: 1.05 }}
-                                        className="bg-white px-8 py-4 rounded-xl shadow-md border border-gray-100 flex items-center gap-3"
+                                        className="bg-white px-8 py-4 rounded-xl shadow-md border border-gray-100 flex items-center gap-4"
                                     >
-                                        <span className="text-2xl">{company.logo}</span>
+                                        <img src={company.logo} alt={company.name} className="w-10 h-10 object-contain" />
                                         <span className="font-semibold text-gray-700">{company.name}</span>
                                     </motion.div>
                                 ))}
@@ -122,8 +124,8 @@ const PlacementCell = () => {
                                         "Our goal is not just to provide jobs, but to shape careers. We strive to bridge the gap between industry requirements and student skills through continuous training and development programs."
                                     </p>
                                     <div className="flex items-center gap-4 border-t border-gray-100 pt-6">
-                                        <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-2xl">
-                                            👨‍💼
+                                        <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-100">
+                                            <img src={rahulSirImg} alt="Mr. Rahul Singh" className="w-full h-full object-cover" />
                                         </div>
                                         <div>
                                             <h4 className="font-bold text-lg" style={{ color: '#0B1C2D' }}>Mr. Rahul Singh</h4>
@@ -141,8 +143,8 @@ const PlacementCell = () => {
                                         "We believe in the potential of every student. Our team works tirelessly to bring the best opportunities and companies to campus, ensuring a bright future for our graduates."
                                     </p>
                                     <div className="flex items-center gap-4 border-t border-gray-100 pt-6">
-                                        <div className="w-14 h-14 rounded-full bg-pink-100 flex items-center justify-center text-2xl">
-                                            👩‍💼
+                                        <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-pink-100">
+                                            <img src={fatemaMamImg} alt="Ms. Fatema Siddique" className="w-full h-full object-cover" />
                                         </div>
                                         <div>
                                             <h4 className="font-bold text-lg" style={{ color: '#0B1C2D' }}>Ms. Fatema Siddique</h4>

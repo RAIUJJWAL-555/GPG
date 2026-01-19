@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import { GoArrowUpRight } from 'react-icons/go';
 
 const CardNav = ({
+  title,
   leftLogo,
   leftLogoAlt = 'Logo',
   rightLogo,
@@ -140,43 +141,48 @@ const CardNav = ({
     >
       <nav
         ref={navRef}
-        className={`card-nav ${isExpanded ? 'open' : ''} block h-[120px] p-0 rounded-xl shadow-md relative overflow-hidden will-change-[height]`}
+        className={`card-nav ${isExpanded ? 'open' : ''} block h-[120px] p-0 rounded-2xl shadow-lg relative overflow-hidden will-change-[height] transition-shadow duration-300 hover:shadow-xl`}
         style={{ backgroundColor: baseColor }}
       >
-        <div className="card-nav-top absolute inset-x-0 top-0 h-[120px] flex items-center justify-between px-4 z-[2]">
-          {/* Left Logo */}
-          <div className="left-logo-container flex items-center">
-            {leftLogo && <img src={leftLogo} alt={leftLogoAlt} className="logo h-[90px] w-auto object-contain" />}
+        <div className="card-nav-top absolute inset-x-0 top-0 h-[120px] flex items-center justify-between px-8 md:px-12 z-[2]">
+          {/* Left Logo and Title */}
+          <div className="left-logo-container flex items-center gap-1">
+            {leftLogo && <img src={leftLogo} alt={leftLogoAlt} className="logo h-[70px] md:h-[90px] w-auto object-contain transition-transform duration-300 hover:scale-105" />}
+            {title && (
+              <h1 className="text-3xl md:text-3xl font-bold tracking-tight hidden lg:block leading-tight" style={{ color: '#0B1C2D' }}>
+                {title}
+              </h1>
+            )}
           </div>
 
           {/* Center - Hamburger Menu */}
           <div
-            className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''} group h-full flex flex-col items-center justify-center cursor-pointer gap-[6px]`}
+            className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''} group h-12 w-12 rounded-full flex flex-col items-center justify-center cursor-pointer gap-[6px] hover:bg-black/5 transition-colors duration-300 ml-auto`}
             onClick={toggleMenu}
             role="button"
             aria-label={isExpanded ? 'Close menu' : 'Open menu'}
             tabIndex={0}
-            style={{ color: menuColor || '#000' }}
+            style={{ color: menuColor || '#0B1C2D' }}
           >
             <div
-              className={`hamburger-line w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${isHamburgerOpen ? 'translate-y-[4px] rotate-45' : ''
-                } group-hover:opacity-75`}
+              className={`hamburger-line w-[24px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${isHamburgerOpen ? 'translate-y-[4px] rotate-45' : ''
+                } group-hover:scale-110`}
             />
             <div
-              className={`hamburger-line w-[30px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${isHamburgerOpen ? '-translate-y-[4px] -rotate-45' : ''
-                } group-hover:opacity-75`}
+              className={`hamburger-line w-[24px] h-[2px] bg-current transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${isHamburgerOpen ? '-translate-y-[4px] -rotate-45' : ''
+                } group-hover:scale-110`}
             />
           </div>
 
-          {/* Right Logo */}
-          <div className="right-logo-container flex items-center">
-            {rightLogo && <img src={rightLogo} alt={rightLogoAlt} className="logo h-[70px] w-auto object-contain" />}
+          {/* Right Area - Spacer or Action */}
+          <div className="right-logo-container flex items-center w-[90px] justify-end pointer-events-none">
+             {/* Maintained for balance, currently empty but preserves layout symmetry if needed */}
           </div>
         </div>
 
         <div
-          className={`card-nav-content absolute left-0 right-0 top-[120px] p-4 flex flex-col items-stretch gap-3 justify-start z-[1] ${isExpanded ? 'visible pointer-events-auto' : 'invisible pointer-events-none'
-            } md:flex-row md:items-stretch md:gap-[12px]`}
+          className={`card-nav-content absolute left-0 right-0 top-[120px] p-4 flex flex-col items-stretch gap-4 justify-start z-[1] ${isExpanded ? 'visible pointer-events-auto' : 'invisible pointer-events-none'
+            } md:flex-row md:items-stretch md:gap-6`}
           aria-hidden={!isExpanded}
         >
           {(items || []).slice(0, 3).map((item, idx) => (
