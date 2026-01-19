@@ -35,7 +35,7 @@ function Header() {
       links: [
         { label: "Student Login", ariaLabel: "Student login portal", href: 'https://urise.up.gov.in/student/login' },
         { label: "Scholarship", ariaLabel: "Scholarship information and application", href: 'https://scholarship.up.gov.in/index.aspx' },
-        { label: "Syllabus", ariaLabel: "Course syllabus details", href: 'https://bteup.ac.in/webapp/SYLLABUS.aspx?type=6' },
+        { label: "Syllabus", ariaLabel: "Course syllabus details", href: '/syllabus' },
         { label: "Admit Card", ariaLabel: "Download admit card", href: 'https://jeecup.admissions.nic.in/document-category/admit-card/' },
         { label: "Library", ariaLabel: "College library resources", href: "https://gpglibrary2020.blogspot.com/" },
         { label: "Result", ariaLabel: "Student examination results", href: "https://result.bteexam.com/" },
