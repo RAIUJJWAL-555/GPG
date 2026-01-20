@@ -13,7 +13,8 @@ const NoticeBoard = () => {
             category: "Admission",
             isNew: true,
             description: "Applications are invited for admission to various courses for the academic session 2026-27. Last date to apply: 28th Feb 2026.",
-            icon: "📚"
+            icon: "📚",
+            link: "https://jeecup.admissions.nic.in/"
         },
         {
             id: 2,
@@ -22,7 +23,8 @@ const NoticeBoard = () => {
             category: "Event",
             isNew: true,
             description: "Annual function will be held on 25th February 2026. All students are requested to participate actively.",
-            icon: "🎭"
+            icon: "🎭",
+            link: "/events"
         },
         {
             id: 3,
@@ -31,7 +33,8 @@ const NoticeBoard = () => {
             category: "Exam",
             isNew: false,
             description: "Semester examination timetable for all courses has been published. Students can download from the exam portal.",
-            icon: "📝"
+            icon: "📝",
+            link: "https://result.bteexam.com/"
         },
         {
             id: 4,
@@ -40,7 +43,8 @@ const NoticeBoard = () => {
             category: "Scholarship",
             isNew: false,
             description: "Government scholarship applications are now open for eligible students. Submit documents before 31st January.",
-            icon: "🎓"
+            icon: "🎓",
+            link: "https://scholarship.up.gov.in/index.aspx"
         },
         {
             id: 5,
@@ -49,7 +53,8 @@ const NoticeBoard = () => {
             category: "Sports",
             isNew: false,
             description: "Annual Sports Day will be celebrated on 20th February. Registration for various sports events is now open.",
-            icon: "🏆"
+            icon: "🏆",
+            link: "/events"
         },
         {
             id: 6,
@@ -58,7 +63,8 @@ const NoticeBoard = () => {
             category: "General",
             isNew: false,
             description: "Library will remain open from 8 AM to 8 PM during the examination period for student convenience.",
-            icon: "📖"
+            icon: "📖",
+            link: "https://gpglibrary2020.blogspot.com/"
         }
     ];
 
@@ -190,15 +196,18 @@ const NoticeBoard = () => {
                                     <p className="text-lg leading-relaxed mb-8" style={{ color: '#D1D5DB' }}>
                                         {notices[activeNotice].description}
                                     </p>
-                                    <button
-                                        className="px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
+                                    <a
+                                        href={notices[activeNotice].link}
+                                        target={notices[activeNotice].link.startsWith('http') ? '_blank' : '_self'}
+                                        rel={notices[activeNotice].link.startsWith('http') ? 'noreferrer' : ''}
+                                        className="inline-block px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
                                         style={{
                                             backgroundColor: '#C7A14A',
                                             color: '#0B1C2D'
                                         }}
                                     >
                                         Read More →
-                                    </button>
+                                    </a>
                                 </motion.div>
                             </AnimatePresence>
 

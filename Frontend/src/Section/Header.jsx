@@ -35,7 +35,7 @@ function Header() {
       textColor: "#F8F6F2",
       links: [
         { label: "Admission Process", ariaLabel: "JEECUP Admission Process", href: '/admission' },
-        { label: "Student Login", ariaLabel: "Student login portal", href: 'https://urise.up.gov.in/student/login' },
+        { label: "Student Login", ariaLabel: "Student login portal", href: 'https://bteup.ac.in/Eseva/OuterPages/StudentAdminLogin.aspx' },
         { label: "Scholarship", ariaLabel: "Scholarship information and application", href: 'https://scholarship.up.gov.in/index.aspx' },
         { label: "Syllabus", ariaLabel: "Course syllabus details", href: '/syllabus' },
         { label: "Admit Card", ariaLabel: "Download admit card", href: 'https://jeecup.admissions.nic.in/document-category/admit-card/' },

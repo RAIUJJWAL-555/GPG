@@ -361,7 +361,7 @@ const CourseDetail = () => {
                 { name: "Mr. Shashank Chandra", designation: "Lecturer Web Designing", department: "Information Technology", image: it6 },
                 { name: "Mr. Jai Gurudev Ji", designation: "Lecturer CHN", department: "Information Technology", image: it7 },
                 { name: "Ms. Neha Chaudhary", designation: "Lecturer CHN", department: "Information Technology", image: it8 },
-                { name: "Mr. Abhishek Chandra", designation: "Lecturer CHN", department: "Information Technology", image: it9 },
+                { name: "Mr. Abhishek Chandra", designation: "Lecturer CHN", department: "Information Technology", image: abhi },
                 { name: "Mrs. Madhu Nirwan", designation: "Computer Instructor", department: "Information Technology", image: it10 },
             ]
         }
