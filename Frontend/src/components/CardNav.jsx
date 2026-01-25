@@ -176,27 +176,17 @@ const CardNav = ({
       >
         <div className="card-nav-top absolute inset-x-0 top-0 h-[120px] flex items-center justify-between px-8 md:px-12 z-[2]">
           {/* Left Logo and Title */}
-          <div className="left-logo-container flex items-center gap-6">
-            {leftLogo && <img src={leftLogo} alt={leftLogoAlt} className="logo h-[80px] md:h-[100px] w-auto object-contain transition-transform duration-300 hover:scale-105" />}
-            <div className="relative hidden lg:block" style={{ minWidth: '700px', height: '52px' }}>
-              <AnimatePresence mode="wait">
-                <motion.h1
-                  key={title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
-                  className="text-3xl font-semibold leading-tight absolute inset-0 whitespace-nowrap"
-                  style={{ 
-                    color: '#0B1C2D',
-                    letterSpacing: '0.03em',
-                    fontWeight: '600'
-                  }}
-                >
-                  {title}
-                </motion.h1>
-              </AnimatePresence>
-            </div>
+          <div className="left-logo-container flex items-center gap-1">
+            {leftLogo && (
+              <a href="/" className="logo-link cursor-pointer">
+                <img src={leftLogo} alt={leftLogoAlt} className="logo h-[70px] md:h-[90px] w-auto object-contain transition-transform duration-300 hover:scale-105" />
+              </a>
+            )}
+            {title && (
+              <h1 className="text-3xl md:text-3xl font-bold tracking-tight hidden lg:block leading-tight" style={{ color: '#0B1C2D' }}>
+                {title}
+              </h1>
+            )}
           </div>
 
           {/* Center - Hamburger Menu */}
