@@ -15,6 +15,13 @@ const DownloadIcon = () => (
     </svg>
 );
 
+const PreviewIcon = () => (
+    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+    </svg>
+);
+
 const Syllabus = () => {
     const departments = [
         {
@@ -75,10 +82,14 @@ const Syllabus = () => {
         document.body.removeChild(link);
     };
 
+    const handlePreview = (dept, pdf) => {
+        if (!pdf) return;
+        window.open(pdf, '_blank');
+    };
+
     return (
         <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F8F6F2' }}>
 
-            
             <main className="flex-grow">
                 <GridBackground className="pt-24 pb-20 px-4">
                     <div className="max-w-6xl mx-auto">
@@ -117,7 +128,7 @@ const Syllabus = () => {
                                     className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 group"
                                 >
                                     <div className="flex items-start justify-between mb-4">
-                                        <div 
+                                        <div
                                             className={`w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-xl`}
                                             style={{
                                                 background: dept.color === 'orange' ? 'linear-gradient(135deg, #C7A14A, #F59E0B)' :
@@ -134,29 +145,43 @@ const Syllabus = () => {
                                             Active
                                         </span>
                                     </div>
-                                    
+
                                     <h3 className="text-xl font-bold mb-2" style={{ color: '#0B1C2D' }}>{dept.label}</h3>
                                     <p className="text-sm text-gray-500 mb-6 h-10">{dept.description}</p>
-                                    
-                                    <button
-                                        onClick={() => handleDownload(dept.label, dept.pdf)}
-                                        className={`w-full py-3 rounded-xl flex items-center justify-center gap-2 font-medium transition-all duration-300 ${dept.pdf ? 'group-hover:-translate-y-1' : 'opacity-50 cursor-not-allowed'}`}
-                                        style={{
-                                            backgroundColor: '#0B1C2D',
-                                            color: '#F8F6F2'
-                                        }}
-                                        disabled={!dept.pdf}
-                                    >
-                                        <DownloadIcon />
-                                        {dept.pdf ? 'Download PDF' : 'Coming Soon'}
-                                    </button>
+
+                                    {dept.pdf ? (
+                                        <div className="flex gap-3">
+                                            <button
+                                                onClick={() => handleDownload(dept.label, dept.pdf)}
+                                                className="flex-1 py-3 rounded-xl flex items-center justify-center gap-2 font-medium transition-all duration-300 hover:-translate-y-1 text-sm bg-[#0B1C2D] text-[#F8F6F2]"
+                                            >
+                                                <DownloadIcon />
+                                                Download
+                                            </button>
+                                            <button
+                                                onClick={() => handlePreview(dept.label, dept.pdf)}
+                                                className="flex-1 py-3 rounded-xl flex items-center justify-center gap-2 font-medium transition-all duration-300 hover:-translate-y-1 text-sm border-2 border-[#0B1C2D] text-[#0B1C2D]"
+                                            >
+                                                <PreviewIcon />
+                                                Preview
+                                            </button>
+                                        </div>
+                                    ) : (
+                                        <button
+                                            disabled
+                                            className="w-full py-3 rounded-xl flex items-center justify-center gap-2 font-medium bg-[#0B1C2D] text-[#F8F6F2] opacity-50 cursor-not-allowed"
+                                        >
+                                            <DownloadIcon />
+                                            Coming Soon
+                                        </button>
+                                    )}
                                 </motion.div>
                             ))}
                         </div>
                     </div>
                 </GridBackground>
             </main>
-            
+
             <Footer />
         </div>
     );

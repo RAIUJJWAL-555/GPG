@@ -106,7 +106,7 @@ const Courses = () => {
     return (
         <section className="relative py-24 px-4 overflow-hidden" style={{ backgroundColor: '#0B1C2D' }}>
             {/* Animated Background Elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute inset-0  overflow-hidden pointer-events-none">
                 <motion.div
                     animate={{
                         scale: [1, 1.2, 1],
