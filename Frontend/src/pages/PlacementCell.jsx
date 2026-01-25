@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Header from '../Section/Header';
 import Footer from '../components/Footer';
 import GridBackground from '../components/GridBackground';
 import placementImg1 from '../assets/PhotoshopExtension_Image.png';
@@ -20,7 +19,7 @@ const TopRecruiters = [
 const PlacementCell = () => {
     return (
         <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F8F6F2' }}>
-            <Header />
+
 
             <main className="flex-grow">
                 <GridBackground className="pt-24 pb-20 px-4">

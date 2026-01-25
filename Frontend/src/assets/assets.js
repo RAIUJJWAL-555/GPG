@@ -1,3 +1,6 @@
+import lib1 from "./Libimage/lib1.png";
+import lib2 from "./Libimage/lib2.png";
+
 // Gallery Data with placeholder images
 export const galleryData = [
     {
@@ -6,9 +9,14 @@ export const galleryData = [
         description: "Our beautiful campus with modern architecture and lush green spaces."
     },
     {
-        image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop",
+        image: lib1,
         heading: "Library",
         description: "State-of-the-art library with extensive collection of books and digital resources."
+    },
+    {
+        image: lib2,
+        heading: "Reading Hall",
+        description: "Spacious and quiet reading environment for students."
     },
     {
         image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800&auto=format&fit=crop",

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import Header from '../Section/Header';
 import Footer from '../components/Footer';
 import StaffCard from '../components/StaffCard';
 import StaffModal from '../components/StaffModal';
@@ -389,7 +388,7 @@ const CourseDetail = () => {
 
     return (
         <div className="min-h-screen" style={{ backgroundColor: '#F8F6F2' }}>
-            <Header />
+
 
             {/* Hero Section */}
             <div

@@ -1,5 +1,7 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState, useEffect } from 'react';
 import { gsap } from 'gsap';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 // use your own icon import if react-icons is not available
 import { GoArrowUpRight } from 'react-icons/go';
 
@@ -117,6 +119,28 @@ const CardNav = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isExpanded]);
 
+  // Click outside handler
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target) && isExpanded) {
+        const tl = tlRef.current;
+        if (tl) {
+          setIsHamburgerOpen(false);
+          tl.eventCallback('onReverseComplete', () => setIsExpanded(false));
+          tl.reverse();
+        }
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside); // Support mobile touch
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isExpanded]);
+
   const toggleMenu = () => {
     const tl = tlRef.current;
     if (!tl) return;
@@ -131,13 +155,19 @@ const CardNav = ({
     }
   };
 
+  const closeMenu = () => {
+    if (isExpanded) {
+      toggleMenu();
+    }
+  };
+
   const setCardRef = i => el => {
     if (el) cardsRef.current[i] = el;
   };
 
   return (
     <div
-      className={`card-nav-container absolute left-1/2 -translate-x-1/2 w-[90%] z-[99] top-[1.2em] md:top-[2em] ${className}`}
+      className={`card-nav-container fixed left-1/2 -translate-x-1/2 w-[90%] z-[99] top-[1.2em] md:top-[2em] ${className}`}
     >
       <nav
         ref={navRef}
@@ -146,13 +176,27 @@ const CardNav = ({
       >
         <div className="card-nav-top absolute inset-x-0 top-0 h-[120px] flex items-center justify-between px-8 md:px-12 z-[2]">
           {/* Left Logo and Title */}
-          <div className="left-logo-container flex items-center gap-1">
-            {leftLogo && <img src={leftLogo} alt={leftLogoAlt} className="logo h-[70px] md:h-[90px] w-auto object-contain transition-transform duration-300 hover:scale-105" />}
-            {title && (
-              <h1 className="text-3xl md:text-3xl font-bold tracking-tight hidden lg:block leading-tight" style={{ color: '#0B1C2D' }}>
-                {title}
-              </h1>
-            )}
+          <div className="left-logo-container flex items-center gap-6">
+            {leftLogo && <img src={leftLogo} alt={leftLogoAlt} className="logo h-[80px] md:h-[100px] w-auto object-contain transition-transform duration-300 hover:scale-105" />}
+            <div className="relative hidden lg:block" style={{ minWidth: '700px', height: '52px' }}>
+              <AnimatePresence mode="wait">
+                <motion.h1
+                  key={title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className="text-3xl font-semibold leading-tight absolute inset-0 whitespace-nowrap"
+                  style={{ 
+                    color: '#0B1C2D',
+                    letterSpacing: '0.03em',
+                    fontWeight: '600'
+                  }}
+                >
+                  {title}
+                </motion.h1>
+              </AnimatePresence>
+            </div>
           </div>
 
           {/* Center - Hamburger Menu */}
@@ -196,17 +240,34 @@ const CardNav = ({
                 {item.label}
               </div>
               <div className="nav-card-links mt-auto flex flex-col gap-[2px]">
-                {item.links?.map((lnk, i) => (
-                  <a
-                    key={`${lnk.label}-${i}`}
-                    className="nav-card-link inline-flex items-center gap-[6px] no-underline cursor-pointer transition-opacity duration-300 hover:opacity-75 text-[15px] md:text-[16px]"
-                    href={lnk.href}
-                    aria-label={lnk.ariaLabel}
-                  >
-                    <GoArrowUpRight className="nav-card-link-icon shrink-0" aria-hidden="true" />
-                    {lnk.label}
-                  </a>
-                ))}
+                {item.links?.map((lnk, i) => {
+                  const isInternal = lnk.href && lnk.href.startsWith('/') && !lnk.href.startsWith('//');
+                  return isInternal ? (
+                    <Link
+                      key={`${lnk.label}-${i}`}
+                      className="nav-card-link inline-flex items-center gap-[6px] no-underline cursor-pointer transition-opacity duration-300 hover:opacity-75 text-[15px] md:text-[16px]"
+                      to={lnk.href}
+                      onClick={closeMenu}
+                      aria-label={lnk.ariaLabel}
+                    >
+                      <GoArrowUpRight className="nav-card-link-icon shrink-0" aria-hidden="true" />
+                      {lnk.label}
+                    </Link>
+                  ) : (
+                    <a
+                      key={`${lnk.label}-${i}`}
+                      className="nav-card-link inline-flex items-center gap-[6px] no-underline cursor-pointer transition-opacity duration-300 hover:opacity-75 text-[15px] md:text-[16px]"
+                      href={lnk.href}
+                      onClick={lnk.href === '#' ? (e) => e.preventDefault() : closeMenu}
+                      target={lnk.href?.startsWith('http') ? "_blank" : undefined}
+                      rel={lnk.href?.startsWith('http') ? "noopener noreferrer" : undefined}
+                      aria-label={lnk.ariaLabel}
+                    >
+                      <GoArrowUpRight className="nav-card-link-icon shrink-0" aria-hidden="true" />
+                      {lnk.label}
+                    </a>
+                  );
+                })}
               </div>
             </div>
           ))}

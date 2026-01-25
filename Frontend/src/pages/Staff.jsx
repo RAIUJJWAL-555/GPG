@@ -1,4 +1,3 @@
-import Header from '@/Section/Header';
 import Footer from '@/components/Footer';
 import StaffCard from '@/components/StaffCard';
 import StaffModal from '@/components/StaffModal';
@@ -222,7 +221,7 @@ const Staff = () => {
 
     return (
         <div className="min-h-screen" style={{ backgroundColor: '#0B1C2D' }}>
-            <Header />
+
 
             {/* Hero Section */}
             <div className="pt-40 pb-16 px-4">

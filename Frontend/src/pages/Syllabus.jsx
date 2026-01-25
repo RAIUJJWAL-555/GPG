@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Header from '../Section/Header';
 import Footer from '../components/Footer';
 import GridBackground from '../components/GridBackground';
 
@@ -78,7 +77,7 @@ const Syllabus = () => {
 
     return (
         <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F8F6F2' }}>
-            <Header />
+
             
             <main className="flex-grow">
                 <GridBackground className="pt-24 pb-20 px-4">

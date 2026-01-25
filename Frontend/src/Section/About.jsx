@@ -71,7 +71,7 @@ const About = () => {
                         </div>
 
                          <a
-                            href="/pages/about" /* Assuming we might have a detailed page later, or just link to generic About */
+                            href="/about" /* Assuming we might have a detailed page later, or just link to generic About */
                             className="inline-flex items-center px-8 py-4 bg-[#0B1C2D] text-white rounded-lg font-semibold transition-all hover:bg-[#C7A14A] hover:shadow-lg group"
                         >
                             Read More

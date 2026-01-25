@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Header from '../Section/Header';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
 import GridBackground from '../components/GridBackground';
@@ -118,7 +117,7 @@ const Admission = () => {
 
     return (
         <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F8F6F2' }}>
-            <Header />
+
 
             <main className="flex-grow">
                 <GridBackground className="pt-24 pb-20 px-4">
