@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://gpg-backend-cpwk3e1wu-rai-7203e9db.vercel.app/api',
 });
 
 api.interceptors.request.use((config) => {

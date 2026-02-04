@@ -225,7 +225,7 @@ const StudentDashboard = () => {
 
                                 {notice.attachment && (
                                     <a
-                                        href={`http://localhost:5000${notice.attachment}`}
+                                        href={`https://gpg-backend-cpwk3e1wu-rai-7203e9db.vercel.app${notice.attachment}`}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center gap-2 text-xs font-bold text-[#0B1C2D] hover:text-[#C7A14A] uppercase tracking-wider group/link transition-colors"

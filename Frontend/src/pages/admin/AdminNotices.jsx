@@ -68,7 +68,7 @@ const AdminNotices = () => {
                         <p className="text-gray-600 mt-2">{notice.description}</p>
                         {notice.attachment && (
                             <a
-                                href={`http://localhost:5000${notice.attachment}`}
+                                href={`https://gpg-backend-cpwk3e1wu-rai-7203e9db.vercel.app${notice.attachment}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-block mt-3 text-sm text-blue-600 hover:underline font-medium"
