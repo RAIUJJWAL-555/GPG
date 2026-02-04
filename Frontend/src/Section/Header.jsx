@@ -33,7 +33,9 @@ const items = [
     textColor: "#F8F6F2",
     links: [
       { label: "Admission Process", ariaLabel: "JEECUP Admission Process", href: '/admission' },
-      { label: "Student Login", ariaLabel: "Student login portal", href: 'https://bteup.ac.in/Eseva/OuterPages/StudentAdminLogin.aspx' },
+      { label: "Student Login", ariaLabel: "Student login portal", href: '/login?role=student' },
+      { label: "Teacher Login", ariaLabel: "Teacher login portal", href: '/login?role=teacher' },
+      { label: "Admin Login", ariaLabel: "Admin login portal", href: '/login?role=admin' },
       { label: "Scholarship", ariaLabel: "Scholarship information and application", href: 'https://scholarship.up.gov.in/index.aspx' },
       { label: "Syllabus", ariaLabel: "Course syllabus details", href: '/syllabus' },
       { label: "Admit Card", ariaLabel: "Download admit card", href: 'https://jeecup.admissions.nic.in/document-category/admit-card/' },
@@ -49,9 +51,9 @@ function Header() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTitle((prevTitle) => 
-        prevTitle === "Government Polytechnic Ghaziabad" 
-          ? "राजकीय पॉलिटेक्निक गाजियाबाद" 
+      setTitle((prevTitle) =>
+        prevTitle === "Government Polytechnic Ghaziabad"
+          ? "राजकीय पॉलिटेक्निक गाजियाबाद"
           : "Government Polytechnic Ghaziabad"
       );
     }, 3000); // Change every 3 seconds

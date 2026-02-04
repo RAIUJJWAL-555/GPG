@@ -1,0 +1,8 @@
+
+
+System Import Timetable (Sample)
+Monday | 10:00-10:50 | DSML | IT 6th Sem | Amit Patel | IT LAB
+Monday | 10:50-11:40 | CC | IT 6th Sem | Neha Chaudhary | Room 220
+Tuesday | 11:40-12:30 | DAA | IT 6th Sem | Anamika | Room 220
+Wednesday | 01:40-02:30 | IMED | IT 6th Sem | Akanksha Singh | Room 220
+Thursday | 02:30-03:20 | PROJECT LAB | IT 6th Sem | Abhishek Chandra | IT LAB

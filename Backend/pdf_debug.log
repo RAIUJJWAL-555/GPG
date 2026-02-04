@@ -1,0 +1,14 @@
+Timestamp: 2026-02-03T13:33:53.165Z
+Error: Illegal character: 41
+Stack: Error
+    at UnknownErrorExceptionClosure (/Users/ujjwalrai/Desktop/Projects/ForGPG/College_Website/Backend/node_modules/pdf-parse/lib/pdf.js/v1.10.100/build/pdf.js:443:37)
+    at Object.<anonymous> (/Users/ujjwalrai/Desktop/Projects/ForGPG/College_Website/Backend/node_modules/pdf-parse/lib/pdf.js/v1.10.100/build/pdf.js:446:2)
+    at __w_pdfjs_require__ (/Users/ujjwalrai/Desktop/Projects/ForGPG/College_Website/Backend/node_modules/pdf-parse/lib/pdf.js/v1.10.100/build/pdf.js:45:30)
+    at Object.<anonymous> (/Users/ujjwalrai/Desktop/Projects/ForGPG/College_Website/Backend/node_modules/pdf-parse/lib/pdf.js/v1.10.100/build/pdf.js:7939:23)
+    at __w_pdfjs_require__ (/Users/ujjwalrai/Desktop/Projects/ForGPG/College_Website/Backend/node_modules/pdf-parse/lib/pdf.js/v1.10.100/build/pdf.js:45:30)
+    at /Users/ujjwalrai/Desktop/Projects/ForGPG/College_Website/Backend/node_modules/pdf-parse/lib/pdf.js/v1.10.100/build/pdf.js:88:18
+    at /Users/ujjwalrai/Desktop/Projects/ForGPG/College_Website/Backend/node_modules/pdf-parse/lib/pdf.js/v1.10.100/build/pdf.js:91:10
+    at webpackUniversalModuleDefinition (/Users/ujjwalrai/Desktop/Projects/ForGPG/College_Website/Backend/node_modules/pdf-parse/lib/pdf.js/v1.10.100/build/pdf.js:18:20)
+    at Object.<anonymous> (/Users/ujjwalrai/Desktop/Projects/ForGPG/College_Website/Backend/node_modules/pdf-parse/lib/pdf.js/v1.10.100/build/pdf.js:25:3)
+    at Module._compile (node:internal/modules/cjs/loader:1706:14)
+

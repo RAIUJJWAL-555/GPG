@@ -1,5 +1,6 @@
 import React from 'react'
 import Hero from '../Section/Hero.jsx'
+import PortalAccess from '../components/PortalAccess.jsx'
 import About from '../Section/About.jsx'
 import Gallery from '../components/Gallery.jsx'
 import NoticeBoard from '../components/NoticeBoard.jsx'
@@ -11,6 +12,7 @@ const Home = () => {
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#F8F6F2' }}>
       <Hero />
+      <PortalAccess />
       <About />
       <Gallery />
       <NoticeBoard />

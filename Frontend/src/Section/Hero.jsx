@@ -69,7 +69,7 @@ function Hero() {
           <div
             className="absolute inset-0"
             style={{
-              background: 'linear-gradient(to bottom, rgba(11, 28, 45, 0.7) 0%, rgba(11, 28, 45, 0.85) 100%)'
+              background: 'linear-gradient(to bottom, rgba(11, 28, 45, 0.5) 0%, rgba(11, 28, 45, 0.7) 100%)'
             }}
           />
         </motion.div>

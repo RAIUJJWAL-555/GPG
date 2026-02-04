@@ -39,3 +39,13 @@ body {
   background-color: var(--color-background);
   color: var(--color-text-dark);
 }
+
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.95); }
+  60% { opacity: 1; transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
