@@ -12,12 +12,12 @@ dotenv.config();
 
 const app = express();
 
-/* ================== ENV CHECK ================== */
+/* ================== ENV ================== */
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
 if (!MONGO_URI) {
-  console.error('❌ MONGO_URI not defined in environment variables');
+  console.error('❌ MONGO_URI not defined');
   process.exit(1);
 }
 
@@ -30,23 +30,14 @@ app.use(cors({
     'http://localhost:5173',
     'http://localhost:3000'
   ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
 
-// Preflight requests (important for production)
-app.options('*', cors());
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// Static files
 app.use('/uploads', express.static('uploads'));
 
 /* ================== ROUTES ================== */
-
-// Health check (Render friendly)
 app.get('/', (req, res) => {
   res.status(200).json({
     success: true,
@@ -54,15 +45,13 @@ app.get('/', (req, res) => {
   });
 });
 
-// Favicon fix
 app.get('/favicon.ico', (req, res) => res.sendStatus(204));
 
-// API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/common', commonRoutes);
 
-/* ================== 404 HANDLER ================== */
+/* ================== 404 ================== */
 app.use((req, res) => {
   res.status(404).json({
     success: false,
@@ -70,27 +59,21 @@ app.use((req, res) => {
   });
 });
 
-/* ================== DATABASE ================== */
-mongoose
-  .connect(MONGO_URI)
+/* ================== DB ================== */
+mongoose.connect(MONGO_URI)
   .then(() => {
-    console.log('✅ Connected to MongoDB');
-    app.listen(PORT, () => {
-      console.log(`🚀 Server running on port ${PORT}`);
-    });
+    console.log('✅ MongoDB Connected');
+    app.listen(PORT, () =>
+      console.log(`🚀 Server running on port ${PORT}`)
+    );
   })
-  .catch((err) => {
-    console.error('❌ MongoDB connection error:', err.message);
+  .catch(err => {
+    console.error('❌ MongoDB error:', err.message);
     process.exit(1);
   });
 
-/* ================== GLOBAL ERROR SAFETY ================== */
-process.on('unhandledRejection', (err) => {
+/* ================== SAFETY ================== */
+process.on('unhandledRejection', err => {
   console.error('❌ Unhandled Rejection:', err.message);
-  process.exit(1);
-});
-
-process.on('uncaughtException', (err) => {
-  console.error('❌ Uncaught Exception:', err.message);
   process.exit(1);
 });
