@@ -2,6 +2,23 @@
 import Notice from '../models/Notice.js';
 import User from '../models/User.js';
 
+export const getHeadStudent = async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id);
+        if (!user) return res.status(404).json({ message: 'User not found' });
+
+        const headStudent = await User.findOne({
+            role: 'student',
+            isHeadStudent: true,
+            gender: user.gender
+        }).select('name email role dob department gender roomNumber profileImage');
+        
+        res.json(headStudent || null);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
 export const getNotices = async (req, res) => {
   try {
     const role = req.user.role;

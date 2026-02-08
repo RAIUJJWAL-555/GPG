@@ -1,7 +1,7 @@
 
 import express from 'express';
 import { protect } from '../middleware/authMiddleware.js';
-import { getNotices, getProfile } from '../controllers/commonController.js';
+import { getNotices, getProfile, getHeadStudent } from '../controllers/commonController.js';
 import { getTimetableByTeacher, getTimetableByClass, getAvailableClasses } from '../controllers/timetableController.js';
 
 const router = express.Router();
@@ -9,6 +9,7 @@ const router = express.Router();
 router.use(protect);
 
 router.get('/notices', getNotices);
+router.get('/head-student', getHeadStudent);
 router.get('/profile', getProfile);
 
 // Common Timetable Routes

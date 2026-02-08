@@ -9,7 +9,7 @@ const generateToken = (id) => {
 };
 
 export const register = async (req, res) => {
-  const { name, email, password, role, enrollmentNumber, dob, department } = req.body;
+  const { name, email, password, role, enrollmentNumber, dob, department, gender, roomNumber } = req.body;
 
   try {
     const userExists = await User.findOne({ email });
@@ -42,7 +42,9 @@ export const register = async (req, res) => {
       isApproved,
       enrollmentNumber,
       dob,
-      department
+      department,
+      gender,
+      roomNumber
     });
 
     res.status(201).json({

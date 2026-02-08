@@ -12,6 +12,9 @@ const userSchema = new mongoose.Schema({
   enrollmentNumber: { type: String },
   dob: { type: Date },
   department: { type: String },
+  gender: { type: String, enum: ['male', 'female', 'other'] },
+  roomNumber: { type: String },
+  isHeadStudent: { type: Boolean, default: false },
 }, { timestamps: true });
 
 export default mongoose.model('User', userSchema);

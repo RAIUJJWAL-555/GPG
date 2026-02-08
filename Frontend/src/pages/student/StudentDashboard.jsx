@@ -12,16 +12,19 @@ const StudentDashboard = () => {
     const [selectedClass, setSelectedClass] = useState('');
     const [schedule, setSchedule] = useState([]);
     const [loadingSchedule, setLoadingSchedule] = useState(false);
+    const [headStudent, setHeadStudent] = useState(null);
 
     useEffect(() => {
         const fetchInitialData = async () => {
             try {
-                const [noticesRes, classesRes] = await Promise.all([
+                const [noticesRes, classesRes, headStudentRes] = await Promise.all([
                     api.get('/common/notices'),
-                    api.get('/common/timetable/classes')
+                    api.get('/common/timetable/classes'),
+                    api.get('/common/head-student')
                 ]);
                 setNotices(noticesRes.data);
                 setAvailableClasses(classesRes.data);
+                setHeadStudent(headStudentRes.data);
 
                 // Auto-select if saved previously
                 const savedClass = localStorage.getItem('student_last_class');
@@ -105,6 +108,50 @@ const StudentDashboard = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Head Student Section */}
+            {headStudent && (
+                <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl p-1 shadow-lg text-white">
+                    <div className="bg-[#0B1C2D] rounded-[22px] p-6 h-full relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-16 -mt-32 blur-3xl"></div>
+
+                        <div className="relative z-10 flex flex-col md:flex-row items-center gap-6">
+                            <div className="w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-[#C7A14A] shadow-xl overflow-hidden flex-shrink-0 bg-gray-700">
+                                {headStudent.profileImage ? (
+                                    <img src={headStudent.profileImage} alt={headStudent.name} className="w-full h-full object-cover" />
+                                ) : (
+                                    <div className="w-full h-full flex items-center justify-center text-2xl font-bold bg-gray-800 text-[#C7A14A]">
+                                        {headStudent.name.charAt(0)}
+                                    </div>
+                                )}
+                            </div>
+
+                            <div className="flex-1 text-center md:text-left">
+                                <div className="inline-block px-3 py-1 rounded-full bg-[#C7A14A]/20 text-[#C7A14A] text-xs font-bold uppercase tracking-wider mb-2 border border-[#C7A14A]/30">
+                                    {headStudent.gender === 'female' ? 'Head Girl' : 'Head Boy'}
+                                </div>
+                                <h3 className="text-2xl font-bold mb-1">{headStudent.name}</h3>
+                                <div className="flex flex-wrap justify-center md:justify-start gap-4 text-sm text-gray-400">
+                                    {headStudent.roomNumber && (
+                                        <div className="flex items-center gap-1.5 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
+                                            <MapPin size={14} className="text-[#C7A14A]" />
+                                            <span>Room {headStudent.roomNumber}</span>
+                                        </div>
+                                    )}
+                                    <div className="flex items-center gap-1.5 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
+                                        <User size={14} className="text-[#C7A14A]" />
+                                        <span>{headStudent.department || 'General'}</span>
+                                    </div>
+                                    <div className="flex items-center gap-1.5 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
+                                        <Search size={14} className="text-[#C7A14A]" />
+                                        <span>Contact for Assistance</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* Timetable Section */}
             <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">

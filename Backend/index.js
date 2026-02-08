@@ -13,7 +13,10 @@ dotenv.config();
 const app = express();
 
 /* ================== ENV CHECK ================== */
-if (!process.env.MONGO_URI) {
+const PORT = process.env.PORT || 5000;
+const MONGO_URI = process.env.MONGO_URI;
+
+if (!MONGO_URI) {
   console.error('❌ MONGO_URI not defined in environment variables');
   process.exit(1);
 }
@@ -32,18 +35,22 @@ app.use(cors({
   credentials: true
 }));
 
-// Preflight fix
+// Preflight requests (important for production)
 app.options('*', cors());
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Static files
 app.use('/uploads', express.static('uploads'));
 
 /* ================== ROUTES ================== */
 
-// Health Check
+// Health check (Render friendly)
 app.get('/', (req, res) => {
   res.status(200).json({
-    message: 'GPG Backend is running 🚀'
+    success: true,
+    message: '🚀 GPG Backend is running successfully'
   });
 });
 
@@ -55,27 +62,35 @@ app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/common', commonRoutes);
 
-/* ================== DATABASE ================== */
-const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI;
-
-mongoose.connect(MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => {
-  console.log('✅ Connected to MongoDB');
-  app.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
+/* ================== 404 HANDLER ================== */
+app.use((req, res) => {
+  res.status(404).json({
+    success: false,
+    message: '❌ Route not found'
   });
-})
-.catch((err) => {
-  console.error('❌ MongoDB connection error:', err);
+});
+
+/* ================== DATABASE ================== */
+mongoose
+  .connect(MONGO_URI)
+  .then(() => {
+    console.log('✅ Connected to MongoDB');
+    app.listen(PORT, () => {
+      console.log(`🚀 Server running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.error('❌ MongoDB connection error:', err.message);
+    process.exit(1);
+  });
+
+/* ================== GLOBAL ERROR SAFETY ================== */
+process.on('unhandledRejection', (err) => {
+  console.error('❌ Unhandled Rejection:', err.message);
   process.exit(1);
 });
 
-/* ================== ERROR SAFETY ================== */
-process.on('unhandledRejection', err => {
-  console.error('❌ Unhandled Rejection:', err);
+process.on('uncaughtException', (err) => {
+  console.error('❌ Uncaught Exception:', err.message);
   process.exit(1);
 });
